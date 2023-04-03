@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Customer1.png" />
+    <None Remove="Entrance.jpg" />
+    <None Remove="Library2.jpg" />
+    <None Remove="Owl.png" />
+    <None Remove="Tryone.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Customer1.png" />
+    <Resource Include="Entrance.jpg" />
+    <Resource Include="Library2.jpg" />
+    <Resource Include="Owl.png" />
+    <Resource Include="Tryone.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,82 @@
+﻿<Page x:Class="LibraryProjBeta3.UserInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryProjBeta3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserInfo">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="PaleGreen"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="FontSize" Value="6"></Setter>
+            <Setter Property="Height" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontStyle" Value="Italic"></Setter>
+        </Style>
+        <Storyboard x:Key="SlideIn">
+            <ThicknessAnimation Storyboard.TargetName="RegistrationForm" Storyboard.TargetProperty="Margin" To="0,0,0,0" Duration="0:0:0.4"/>
+        </Storyboard>
+        <Storyboard x:Key="SlideOut">
+            <ThicknessAnimation Storyboard.TargetName="RegistrationForm" Storyboard.TargetProperty="Margin" To="-220,0,0,0" Duration="0:0:0.4"/>
+        </Storyboard>
+
+    </Page.Resources>
+
+    <Viewbox>
+        <Grid Height="225" Width="411">
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
+            <StackPanel Width="100" HorizontalAlignment="Center" >
+                <ListBox x:Name="Lb_Loaned" Width=" 100" Height="200" VerticalAlignment ="Top" HorizontalAlignment="Left" FontSize="6" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" SelectionChanged="Lb_Loaned_SelectionChanged"></ListBox>
+                <Button  Height="25" Content="Return" Click="return_btn_Click" Name="return_btn" >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+            
+            <StackPanel Name="Edit_Stack" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50">
+                <TextBlock Text="Please enter password" FontSize="8" Foreground="White"></TextBlock>
+                <TextBox Name="password_Box"></TextBox>
+                <Button Height="20" Content="Open Edit" Click="Button_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+            <Grid x:Name="RegistrationForm" HorizontalAlignment="Left" Width="100" Margin="-220,0,0,0">
+                <StackPanel Name="Info_Stack" Width="100" Height="170" HorizontalAlignment="Left" IsEnabled="False" Margin="0,50,0,0" >
+                    <TextBlock Text="Name" Foreground="White" FontSize="8"></TextBlock>
+                    <TextBox Name="name_Box" FontSize="10" Height="20" ></TextBox>
+                    <TextBlock Text="Age" Foreground="White" FontSize="8"></TextBlock>
+                    <TextBox Name="age_Box" FontSize="10" Height="20" ></TextBox>
+                    <TextBlock Text="Password" Foreground="White" FontSize="8"></TextBlock>
+                    <TextBox Name="pass_Box" FontSize="10" Height="20" ></TextBox>
+                    <Button Name="save_editBtn" Height="20" Content="Save Edit" FontSize="10" Visibility="Collapsed" Click="save_editBtn_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <TextBlock Name="Erros_box" Height="60" FontSize="10"  Foreground="White" FontWeight="Bold" FontStyle="Italic" TextWrapping="WrapWithOverflow"></TextBlock>
+
+                </StackPanel>
+            </Grid>
+          
+            <TextBlock Name="return_Box" Width="150" Height="225" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="10" FontWeight="Bold" FontStyle="Italic" Foreground="White" TextWrapping="WrapWithOverflow"></TextBlock>
+
+        </Grid>
+    </Viewbox>
+</Page>

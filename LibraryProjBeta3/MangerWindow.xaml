@@ -1,0 +1,32 @@
+﻿<Window Background="#222222" Foreground="White" x:Class="LibraryProjBeta3.MangerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryProjBeta3"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="MangerWindow" Height="450" Width="800">
+    <Viewbox>
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Library2.jpg"/>
+            </Grid.Background>
+            <StackPanel HorizontalAlignment="Left" Height="158" VerticalAlignment="Top" Width="133">
+                <TextBlock Text="Menu:" TextAlignment="Center" FontWeight="Bold"></TextBlock>
+                <Button x:Name="bnt_searchItem" Content="Search Item" Click="bnt_searchItem_Click"></Button>
+                <Button x:Name="bnt_createItem" Content="Create Item" Click="bnt_createItem_Click"></Button>
+                
+                <Button x:Name="bnt_Edit" Content="Edit" Click="bnt_Edit_Click"></Button>
+                <Button x:Name="bnt_displayItem" Content="Display Item" Click="bnt_displayItem_Click"></Button>
+                <Button x:Name="bnt_libraryInfo" Content="Library Info" Click="bnt_libraryInfo_Click"></Button>
+                <Button x:Name="btn_sendMessage" Content="Send Message" Click="btn_sendMessage_Click"></Button>
+
+
+            </StackPanel>
+            <Frame Name="MangerFrame" Content="" HorizontalAlignment="Left" Height="434" Margin="163,0,0,0" VerticalAlignment="Center" NavigationUIVisibility="Hidden" Width="637"/>
+            <Image HorizontalAlignment="Left" Height="276" Margin="0,158,0,0" VerticalAlignment="Top" Width="148" Source="/Owl.png" Stretch="Fill"/>
+            <Button Name="mainPage_btn" Width="100" Height="20" Content="Back to MainPage" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="mainPage_btn_Click" ></Button>
+        </Grid>
+    </Viewbox>
+</Window>

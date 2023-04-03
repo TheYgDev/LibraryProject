@@ -1,0 +1,57 @@
+﻿<Page x:Class="LibraryProjBeta3.MangerSendMessage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryProjBeta3"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MangerSendMessage">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="PaleGreen"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="FontSize" Value="6"></Setter>
+            <Setter Property="Height" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontStyle" Value="Italic"></Setter>
+        </Style>
+
+    </Page.Resources>
+
+    <Viewbox>
+        <Grid Height="225" Width="411">
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
+            <StackPanel Width="100" HorizontalAlignment="Left">    
+                <TextBlock Text="Search Customer" FontWeight="Bold" FontStyle="Italic" Foreground="White" FontSize="8"></TextBlock>
+                <TextBox Name="Search_box" FontSize="8" TextChanged="Search_box_TextChanged"></TextBox>
+                <TextBlock></TextBlock>
+                <ListBox Height="190" Name="lb_cust" Background="{DynamicResource {x:Static SystemColors.InfoBrushKey}}" FontSize="8" SelectionChanged="lb_cust_SelectionChanged" ></ListBox>
+            </StackPanel>
+            <StackPanel Width="200" Margin="50,0,0,0">
+                <StackPanel Height="20" Orientation="Horizontal">
+                    <TextBlock Width="25" Text="To :" FontSize="8" FontWeight="Bold" FontStyle="Italic" Foreground="White"></TextBlock>
+                    <TextBox Name="custName_Box" Width="175"></TextBox>
+                </StackPanel>
+                <TextBlock Text="Title:" FontWeight="Bold" FontStyle="Italic" FontSize="8" Foreground="White"></TextBlock>
+                <TextBox Name="Title_box" ></TextBox>
+                <TextBlock FontWeight="Bold" Text="Content" FontStyle="Italic" FontSize="8" Foreground="White"></TextBlock>
+                <TextBox Name="Info_box" Height="165" AcceptsReturn="True"></TextBox>
+            </StackPanel>
+            <Button Name="btn_send" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Send"  Click="btn_send_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+            
+
+         
+        </Grid>
+    </Viewbox>
+</Page>
